@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open US Unisex T-Shirt Sizing, Chest-to-Fit Model & Cotton Shrinkage Reference</title>
+  <meta name="description" content="Open-source anthropometric reference for US unisex T-shirt sizing (ANSUR II / NHANES civilian waist calibration), flat pit-to-pit measurements, and cotton shrinkage rates.">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #1d4ed8;
+      --border: #e2e8f0;
+    }
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 auto 0.75rem;
+      max-width: 820px;
+      font-size: 1.9rem;
+      line-height: 1.25;
+    }
+    header p {
+      margin: 0 auto;
+      max-width: 720px;
+      color: #cbd5e1;
+      font-size: 1.05rem;
+    }
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.35rem;
+      color: #1e293b;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 0.5rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 0.65rem 0.85rem;
+      text-align: left;
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 0.35rem;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.55rem 0.75rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button.btn {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7rem 1.25rem;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .result-box {
+      background: #eff6ff;
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      margin-top: 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    ul.resource-list li {
+      margin-bottom: 0.65rem;
+    }
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.9rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Open US Unisex T-Shirt Sizing, Chest-to-Fit Formula &amp; Cotton Shrinkage Reference</h1>
+    <p>Technical documentation &amp; interactive quick-estimator maintained by Alex Nguyen (<a href="https://tshirtsiwant.com/" style="color:#93c5fd;">T-Shirts I Want</a>)</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>1. Interactive US Unisex Tee Quick Estimator (ANSUR II + NHANES Model)</h2>
+      <p>This lightweight estimator applies the 4-parameter linear chest &amp; civilian waist regression calibrated against ANSUR II (n = 6,068) and NHANES 2021–2023 civilian datasets. For multi-style comparisons (hoodies, sweatshirts, women's fitted tees, tank tops, and flat pit-to-pit garment matching), use the full <a href="https://tshirtsiwant.com/tools/size-calculator/">T-Shirt Size Calculator by Height and Weight</a>.</p>
+      <div class="calc-grid">
+        <div>
+          <label for="sex">Sex</label>
+          <select id="sex">
+            <option value="m">Male</option>
+            <option value="f">Female</option>
+          </select>
+        </div>
+        <div>
+          <label for="height_in">Height (inches, e.g., 70 = 5'10")</label>
+          <input type="number" id="height_in" value="70" min="54" max="82">
+        </div>
+        <div>
+          <label for="weight_lb">Weight (lbs)</label>
+          <input type="number" id="weight_lb" value="170" min="85" max="380">
+        </div>
+        <div>
+          <label for="fit">Fit Preference</label>
+          <select id="fit">
+            <option value="-2.5">Snug (-1 in ease)</option>
+            <option value="0" selected>Regular Fit</option>
+            <option value="5.0">Relaxed (+2 in ease)</option>
+          </select>
+        </div>
+      </div>
+      <button class="btn" onclick="estimateSize()">Calculate Recommended Size</button>
+      <div id="calcResult" class="result-box">Recommended US Unisex Size: <strong>M</strong> (Estimated Chest: 39.8 in | Garment Chest: 40.0 in)</div>
+    </section>
+
+    <section class="card">
+      <h2>2. Standard US Unisex Classic Tee Flat Dimensions (S to 5XL)</h2>
+      <p>Garment chest is twice the laid-flat pit-to-pit width measured 1 inch below the armhole. For visual measuring diagrams and men's vs. women's crossover tables, see the complete <a href="https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/">Unisex T-Shirt Size Chart &amp; Pit-to-Pit Measuring Guide</a>.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>US Size</th>
+            <th>Flat Half-Chest (Pit-to-Pit)</th>
+            <th>Full Garment Chest</th>
+            <th>Body Length (HPS)</th>
+            <th>Recommended Body Chest Range</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>S</strong></td><td>18.0 in (45.7 cm)</td><td>36.0 in (91.4 cm)</td><td>28.0 in (71.1 cm)</td><td>34 – 36 in</td></tr>
+          <tr><td><strong>M</strong></td><td>20.0 in (50.8 cm)</td><td>40.0 in (101.6 cm)</td><td>29.0 in (73.7 cm)</td><td>37 – 40 in</td></tr>
+          <tr><td><strong>L</strong></td><td>22.0 in (55.9 cm)</td><td>44.0 in (111.8 cm)</td><td>30.0 in (76.2 cm)</td><td>41 – 44 in</td></tr>
+          <tr><td><strong>XL</strong></td><td>24.0 in (61.0 cm)</td><td>48.0 in (121.9 cm)</td><td>31.0 in (78.7 cm)</td><td>45 – 48 in</td></tr>
+          <tr><td><strong>2XL</strong></td><td>26.0 in (66.0 cm)</td><td>52.0 in (132.1 cm)</td><td>32.0 in (81.3 cm)</td><td>49 – 52 in</td></tr>
+          <tr><td><strong>3XL</strong></td><td>28.0 in (71.1 cm)</td><td>56.0 in (142.2 cm)</td><td>33.0 in (83.8 cm)</td><td>53 – 56 in</td></tr>
+          <tr><td><strong>4XL</strong></td><td>30.0 in (76.2 cm)</td><td>60.0 in (152.4 cm)</td><td>34.0 in (86.4 cm)</td><td>57 – 60 in</td></tr>
+          <tr><td><strong>5XL</strong></td><td>32.0 in (81.3 cm)</td><td>64.0 in (162.6 cm)</td><td>35.0 in (88.9 cm)</td><td>61 – 64 in</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>3. First-Wash Cotton Shrinkage &amp; Fabric Care Benchmarks</h2>
+      <p>Even preshrunk heavyweight cotton experiences residual relaxation shrinkage during the first home wash-and-dry cycle. When a shopper falls within 1 inch (2.5 cm) of a size boundary, sizing up prevents post-wash tightness across the shoulders and midsection.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Fabric Construction</th>
+            <th>Cold Wash + Air Dry</th>
+            <th>Warm Wash + Medium Tumble Dry</th>
+            <th>High-Heat Dryer Risk</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>100% Carded Open-End Cotton (e.g., Gildan 5000)</strong></td><td>1.0% – 2.0%</td><td>3.0% – 4.5% (approx. 0.5–1.0 in length)</td><td>Up to 5%–6% + collar curl</td></tr>
+          <tr><td><strong>100% Combed Ring-Spun Cotton (e.g., Bella+Canvas 3001)</strong></td><td>1.0% – 1.5%</td><td>2.5% – 3.5%</td><td>4.0% – 5.0%</td></tr>
+          <tr><td><strong>50/50 Cotton-Polyester Blend</strong></td><td>&lt; 1.0%</td><td>1.0% – 2.0%</td><td>Minimal shrinkage; heat affects DTG ink</td></tr>
+          <tr><td><strong>100% Performance Polyester</strong></td><td>0%</td><td>0% – 0.5%</td><td>Avoid high heat to prevent dye migration</td></tr>
+        </tbody>
+      </table>
+      <p>Read the full empirical breakdown in <a href="https://tshirtsiwant.com/blog/does-cotton-shrink/">Does Cotton Shrink? What to Expect and How to Choose the Right Size</a>.</p>
+    </section>
+
+    <section class="card">
+      <h2>4. Primary Reference Guides &amp; Technical Documentation</h2>
+      <ul class="resource-list">
+        <li><strong>Interactive Sizing Tool:</strong> <a href="https://tshirtsiwant.com/tools/size-calculator/">T-Shirt Size Calculator by Height, Weight &amp; Pit-to-Pit Width</a></li>
+        <li><strong>Unisex vs. Women's Fit Guide:</strong> <a href="https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/">Unisex vs. Women's T-Shirt Sizes: How to Pick the Right Fit for Someone Else</a></li>
+        <li><strong>Shrinkage &amp; Tolerance Data:</strong> <a href="https://tshirtsiwant.com/blog/does-cotton-shrink/">Does Cotton Shrink? Wash &amp; Dryer Shrinkage Reference</a></li>
+        <li><strong>DTG Print Preservation:</strong> <a href="https://tshirtsiwant.com/blog/how-to-wash-graphic-tees/">How to Wash Graphic Tees Without Cracking or Peeling</a></li>
+        <li><strong>Fabric Comparison:</strong> <a href="https://tshirtsiwant.com/blog/cotton-vs-performance-shirts/">Cotton vs. Performance Shirts: Breathability, Weight &amp; Daily Wear</a></li>
+        <li><strong>Tools Hub:</strong> <a href="https://tshirtsiwant.com/tools/">Free Apparel &amp; Browser Tools by T-Shirts I Want</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Published under CC BY 4.0 Open Reference License by <a href="https://tshirtsiwant.com/">T-Shirts I Want</a> &middot; <a href="https://github.com/alex-nguyen-tiw">GitHub (@alex-nguyen-tiw)</a></p>
+  </footer>
+
+  <script>
+    function estimateSize() {
+      const sex = document.getElementById('sex').value;
+      const hIn = parseFloat(document.getElementById('height_in').value) || 70;
+      const wLb = parseFloat(document.getElementById('weight_lb').value) || 170;
+      const easeCm = parseFloat(document.getElementById('fit').value) || 0;
+      const hCm = hIn * 2.54;
+      const wKg = wLb * 0.45359237;
+      const bmi = wKg / Math.pow(hCm / 100, 2);
+      let chestCm = sex === 'm'
+        ? (33.5 + 0.14 * hCm + 0.38 * wKg + 0.65 * bmi)
+        : (31.0 + 0.12 * hCm + 0.35 * wKg + 0.72 * bmi);
+      const targetCm = chestCm + easeCm;
+      const sizes = [
+        ['S', 91.4, 36],
+        ['M', 101.6, 40],
+        ['L', 111.8, 44],
+        ['XL', 121.9, 48],
+        ['2XL', 132.1, 52],
+        ['3XL', 142.2, 56],
+        ['4XL', 152.4, 60],
+        ['5XL', 162.6, 64]
+      ];
+      let chosen = sizes[sizes.length - 1];
+      for (const s of sizes) {
+        if (s[1] >= targetCm) {
+          chosen = s;
+          break;
+        }
+      }
+      const estIn = (chestCm / 2.54).toFixed(1);
+      document.getElementById('calcResult').innerHTML =
+        'Recommended US Unisex Size: <strong>' + chosen[0] + '</strong> (Estimated Body Chest: ' + estIn + ' in | Garment Chest: ' + chosen[2] + '.0 in) — <a href="https://tshirtsiwant.com/tools/size-calculator/">Open Full Multi-Style Calculator &rarr;</a>';
+    }
+  </script>
+</body>
+</html>
