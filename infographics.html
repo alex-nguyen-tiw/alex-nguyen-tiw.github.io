@@ -1,178 +1,74 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CC BY 4.0 Open Apparel Infographics: T-Shirt Size Chart, Cotton Shrinkage &amp; Print Care</title>
-  <meta name="description" content="Free-to-reuse Creative Commons (CC BY 4.0) technical apparel infographics and 4-page PDF reference manual: US Unisex S–5XL Size Chart, Cotton Shrinkage Rates, 5-Step DTG Print Care, and Fabric GSM Matrix." />
-  <style>
-    :root {
-      --bg: #f8fafc;
-      --card: #ffffff;
-      --text: #0f172a;
-      --muted: #475569;
-      --accent: #1d4ed8;
-      --border: #e2e8f0;
-    }
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-    }
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
-      color: #ffffff;
-      padding: 2.5rem 1.25rem;
-      border-bottom: 4px solid #38bdf8;
-    }
-    .container { max-width: 1000px; margin: 0 auto; }
-    .badge {
-      display: inline-block;
-      background: rgba(56, 189, 248, 0.2);
-      border: 1px solid #38bdf8;
-      color: #7dd3fc;
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    h1 { margin: 0 0 0.6rem; font-size: 1.95rem; }
-    .lead { color: #cbd5e1; max-width: 820px; margin: 0 0 1.2rem; }
-    .btn-bar { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-    .btn {
-      display: inline-block;
-      background: #38bdf8;
-      color: #0f172a;
-      font-weight: 700;
-      padding: 0.6rem 1.1rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.92rem;
-    }
-    .btn-sec {
-      background: rgba(255,255,255,0.12);
-      color: #ffffff;
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-    main { padding: 2rem 1.25rem 3.5rem; }
-    .inf-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
-    }
-    .inf-card h2 { margin-top: 0; font-size: 1.35rem; color: #0f172a; }
-    .inf-img-wrap {
-      background: #0f172a;
-      padding: 12px;
-      border-radius: 10px;
-      text-align: center;
-      margin: 1rem 0;
-    }
-    .inf-img-wrap img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-      display: block;
-      margin: 0 auto;
-    }
-    textarea {
-      width: 100%;
-      height: 78px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.8rem;
-      padding: 8px 10px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      background: #f1f5f9;
-      color: #0f172a;
-    }
-    a { color: var(--accent); font-weight: 600; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printable T-Shirt Size and Care Charts (CC BY 4.0) | Tshirts I Want</title>
+<meta name="description" content="Free printable T-shirt size, shrinkage and care charts from Tshirts I Want. The official, maintained copies live on tshirtsiwant.com.">
+<link rel="canonical" href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/">
+<style>
+:root{--ink:#17324D;--slate:#5A6C78;--mist:#E7EEF0;--cream:#FFF8F0;--deep:#C44924}
+*{box-sizing:border-box} body{margin:0;font-family:"Plus Jakarta Sans",Inter,system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55}
+main{max-width:1040px;margin:0 auto;padding:32px 16px 64px} h1{font-size:34px;line-height:1.15;margin:0 0 10px}
+.note{background:var(--cream);border-radius:14px;padding:14px 18px;margin:0 0 24px} a{color:var(--deep)}
+.card{display:grid;grid-template-columns:minmax(0,1fr);gap:18px;padding:18px;border:1px solid var(--mist);border-radius:16px;margin:0 0 20px}
+@media(min-width:860px){.card{grid-template-columns:360px minmax(0,1fr)}}
+.card img{width:100%;height:auto;border-radius:10px;display:block} .card h2{margin:0 0 6px;font-size:24px}
+.data{color:var(--slate);font-size:15px} label{display:block;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin:12px 0 6px}
+textarea{width:100%;min-height:96px;font:13px/1.5 ui-monospace,Consolas,monospace;background:var(--cream);border:1px solid var(--mist);border-radius:10px;padding:10px}
+</style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <span class="badge">Creative Commons Attribution 4.0 (CC BY 4.0) · Open Visual Kit</span>
-      <h1>US Unisex T-Shirt Sizing, Cotton Shrinkage &amp; Print Care Visual Reference Pack</h1>
-      <p class="lead">
-        High-resolution (1600×2000 Retina PNG) technical diagrams and a 4-page printable PDF manual compiled by the
-        apparel engineering team at <a href="https://tshirtsiwant.com/" style="color:#7dd3fc;" rel="dofollow">Tshirts I Want</a>.
-        Bloggers, journalists, event organizers, and educators may freely embed or republish these visuals under
-        <strong>CC BY 4.0</strong> with an attribution link to the original guide.
-      </p>
-      <div class="btn-bar">
-        <a class="btn" href="US-Unisex-T-Shirt-Sizing-Shrinkage-Care-Reference-Manual-CC-BY-4.0.pdf" target="_blank">Download 4-Page Reference Manual (PDF)</a>
-        <a class="btn btn-sec" href="https://tshirtsiwant.com/tools/size-calculator/" rel="dofollow">Open Interactive Size Calculator</a>
-        <a class="btn btn-sec" href="index.html">Back to Open Sizing Benchmark</a>
-      </div>
-    </div>
-  </header>
-
-  <main class="container">
-    <!-- INFOGRAPHIC 1 -->
-    <section class="inf-card" id="chart-1">
-      <h2>1. How to Measure Chest Width &amp; Body Length on a Flat Unisex T-Shirt (S–5XL Visual Guide)</h2>
-      <p>
-        Compares flat pit-to-pit half-chest width (A) vs. body chest circumference and High Point Shoulder (HPS) length (B) across US adult sizes S through 5XL for Gildan 5000 and Bella+Canvas 3001 blanks.
-        <br/><strong>Primary Source Guide:</strong> <a href="https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/" rel="dofollow">US Unisex T-Shirt Size Chart (S–5XL)</a> ·
-        <strong>Interactive Tool:</strong> <a href="https://tshirtsiwant.com/tools/size-calculator/" rel="dofollow">T-Shirt Size Calculator</a>
-      </p>
-      <div class="inf-img-wrap">
-        <img src="01-unisex-t-shirt-size-chart-measurement-guide-s-5xl.png" alt="How to Measure Chest Width and Body Length on a Flat Unisex T-Shirt S to 5XL Chart" loading="lazy" width="800" height="1000" />
-      </div>
-      <label><strong>Copy HTML Embed Code (CC BY 4.0 Attribution Included):</strong></label>
-      <textarea readonly onclick="this.select()">&lt;figure&gt;&lt;img src="https://alex-nguyen-tiw.github.io/01-unisex-t-shirt-size-chart-measurement-guide-s-5xl.png" alt="How to Measure Chest Width and Body Length on a Flat Unisex T-Shirt (S-5XL Visual Guide)" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Chart via &lt;a href="https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/"&gt;Tshirts I Want — US Unisex T-Shirt Size Chart&lt;/a&gt; &amp;amp; &lt;a href="https://tshirtsiwant.com/tools/size-calculator/"&gt;Interactive Size Calculator&lt;/a&gt; (CC BY 4.0).&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
-    </section>
-
-    <!-- INFOGRAPHIC 2 -->
-    <section class="inf-card" id="chart-2">
-      <h2>2. 100% Cotton vs. Ring-Spun vs. 50/50 Poly-Cotton Shrinkage Rate Chart (By Wash &amp; Dryer Heat)</h2>
-      <p>
-        Side-by-side dimensional shrinkage rates (%) and real inch loss on a Large (22×30 in) T-shirt across cold wash + air dry, warm wash + low tumble, and hot wash + high commercial dryer cycles.
-        <br/><strong>Primary Source Guide:</strong> <a href="https://tshirtsiwant.com/blog/does-cotton-shrink/" rel="dofollow">Does Cotton Shrink? Complete T-Shirt Shrinkage Guide</a>
-      </p>
-      <div class="inf-img-wrap">
-        <img src="02-cotton-shrinkage-rate-chart-wash-dryer-heat.png" alt="100% Cotton vs Ring-Spun vs 50/50 Poly-Cotton Shrinkage Rate Chart by Wash and Dryer Heat" loading="lazy" width="800" height="1000" />
-      </div>
-      <label><strong>Copy HTML Embed Code (CC BY 4.0 Attribution Included):</strong></label>
-      <textarea readonly onclick="this.select()">&lt;figure&gt;&lt;img src="https://alex-nguyen-tiw.github.io/02-cotton-shrinkage-rate-chart-wash-dryer-heat.png" alt="100% Cotton vs Ring-Spun vs 50/50 Poly-Cotton Shrinkage Rate Chart" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Data via &lt;a href="https://tshirtsiwant.com/blog/does-cotton-shrink/"&gt;Tshirts I Want — Does Cotton Shrink? Fabric Testing Guide&lt;/a&gt; (CC BY 4.0).&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
-    </section>
-
-    <!-- INFOGRAPHIC 3 -->
-    <section class="inf-card" id="chart-3">
-      <h2>3. The 5-Step Graphic Tee Care Protocol to Prevent DTG &amp; Screen Print Cracking &amp; Peeling</h2>
-      <p>
-        Conservation workflow for water-based Direct-to-Garment (DTG) pigment ink and plastisol screen prints to prevent spiderweb cracking, pigment oxidation, and wavy collar deformation.
-        <br/><strong>Primary Source Guide:</strong> <a href="https://tshirtsiwant.com/blog/how-to-wash-graphic-tees/" rel="dofollow">How to Wash Graphic Tees Without Cracking or Fading</a>
-      </p>
-      <div class="inf-img-wrap">
-        <img src="03-5-step-graphic-tee-care-protocol-dtg-screen-print.png" alt="The 5-Step Graphic Tee Care Protocol to Prevent DTG and Screen Print Cracking" loading="lazy" width="800" height="1000" />
-      </div>
-      <label><strong>Copy HTML Embed Code (CC BY 4.0 Attribution Included):</strong></label>
-      <textarea readonly onclick="this.select()">&lt;figure&gt;&lt;img src="https://alex-nguyen-tiw.github.io/03-5-step-graphic-tee-care-protocol-dtg-screen-print.png" alt="5-Step Graphic Tee Care Protocol to Prevent DTG Print Cracking" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Protocol via &lt;a href="https://tshirtsiwant.com/blog/how-to-wash-graphic-tees/"&gt;Tshirts I Want — How to Wash Graphic Tees Guide&lt;/a&gt; (CC BY 4.0).&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
-    </section>
-
-    <!-- INFOGRAPHIC 4 -->
-    <section class="inf-card" id="chart-4">
-      <h2>4. Heavyweight Cotton vs. Combed Ring-Spun vs. Moisture-Wicking Performance Tees Matrix</h2>
-      <p>
-        Technical matrix comparing 5.3–6.0 oz/yd² Heavyweight Cotton, 4.2 oz/yd² Combed Ring-Spun Cotton, 50/50 Workwear Blends, and 3.8 oz/yd² Moisture-Wicking Polyester across GSM, breathability, sweat wicking, print crispness, and drape.
-        <br/><strong>Primary Source Guide:</strong> <a href="https://tshirtsiwant.com/blog/cotton-vs-performance-shirts/" rel="dofollow">Cotton vs. Performance Shirts: Breathability &amp; Fit Comparison</a>
-      </p>
-      <div class="inf-img-wrap">
-        <img src="04-heavyweight-cotton-vs-moisture-wicking-performance-matrix.png" alt="Heavyweight Cotton vs Combed Ring-Spun vs Moisture-Wicking Performance Tees Matrix" loading="lazy" width="800" height="1000" />
-      </div>
-      <label><strong>Copy HTML Embed Code (CC BY 4.0 Attribution Included):</strong></label>
-      <textarea readonly onclick="this.select()">&lt;figure&gt;&lt;img src="https://alex-nguyen-tiw.github.io/04-heavyweight-cotton-vs-moisture-wicking-performance-matrix.png" alt="Heavyweight Cotton vs Ring-Spun vs Performance Tees Matrix" style="max-width:100%;height:auto;" /&gt;&lt;figcaption&gt;Matrix via &lt;a href="https://tshirtsiwant.com/blog/cotton-vs-performance-shirts/"&gt;Tshirts I Want — Cotton vs. Performance Shirts Guide&lt;/a&gt; (CC BY 4.0).&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
-    </section>
-  </main>
+<main>
+<h1>Printable T-Shirt Size and Care Charts</h1>
+<div class="note"><p><strong>The official, maintained copies are on <a href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/">tshirtsiwant.com/tools/printable-t-shirt-charts</a>.</strong>
+This page mirrors them. Charts are free to share under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> with credit to <a href="https://tshirtsiwant.com/">Tshirts I Want</a>.
+<a href="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-t-shirt-size-and-care-charts.pdf">Download all four as one PDF</a>.</p>
+<p>Updated 2026-10-24: earlier versions of these charts carried figures we could not source; they were replaced with charts built from the live size guide and the sourced guides on tshirtsiwant.com.</p></div>
+<section class="card" id="size-chart">
+  <a href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/#size-chart"><img src="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-unisex-t-shirt-size-chart.png" alt="Unisex T-shirt size chart from S to 5XL: pit-to-pit width, length and chest around in inches and centimeters, with how to measure a shirt laid flat." width="1600" height="2000" loading="lazy"></a>
+  <div>
+    <h2>Unisex T-shirt size chart</h2>
+    <p>Pit-to-pit width, length and chest around for every size from S to 5XL, plus how to measure a shirt you already like so you can compare.</p>
+    <p class="data"><strong>Data:</strong> Garment measurements from the size guide on our product pages (Unisex Heavy Cotton Tee, Gildan), measured flat.</p>
+    <p><a href="https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/">Read the full guide</a> · <a href="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-unisex-t-shirt-size-chart.png">Download PNG</a></p>
+    <label for="e-size-chart">Embed this chart</label>
+    <textarea id="e-size-chart" rows="4" readonly>&lt;figure&gt;&lt;a href=&quot;https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/&quot;&gt;&lt;img src=&quot;https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-unisex-t-shirt-size-chart.png&quot; alt=&quot;Unisex T-shirt size chart from S to 5XL: pit-to-pit width, length and chest around in inches and centimeters, with how to measure a shirt laid flat.&quot; width=&quot;1600&quot; height=&quot;2000&quot; loading=&quot;lazy&quot; style=&quot;max-width:100%;height:auto&quot;&gt;&lt;/a&gt;&lt;figcaption&gt;Chart: &lt;a href=&quot;https://tshirtsiwant.com/tools/printable-t-shirt-charts/&quot;&gt;Tshirts I Want&lt;/a&gt;, &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;&gt;CC BY 4.0&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
+  </div>
+</section>
+<section class="card" id="cotton-shrinkage">
+  <a href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/#cotton-shrinkage"><img src="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-does-cotton-shrink-chart.png" alt="Does cotton shrink? The six things that change the result — water, heat, agitation, drying, how the tee was made and wash history — with tips before sizing up and for keeping the fit." width="1600" height="2000" loading="lazy"></a>
+  <div>
+    <h2>Does cotton shrink?</h2>
+    <p>The six things that change how much a cotton tee shrinks, what to check before you size up, and how to keep the fit you chose.</p>
+    <p class="data"><strong>Data:</strong> No percentages on purpose: the change depends on the garment and how it is washed and dried.</p>
+    <p><a href="https://tshirtsiwant.com/blog/does-cotton-shrink/">Read the full guide</a> · <a href="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-does-cotton-shrink-chart.png">Download PNG</a></p>
+    <label for="e-cotton-shrinkage">Embed this chart</label>
+    <textarea id="e-cotton-shrinkage" rows="4" readonly>&lt;figure&gt;&lt;a href=&quot;https://tshirtsiwant.com/blog/does-cotton-shrink/&quot;&gt;&lt;img src=&quot;https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-does-cotton-shrink-chart.png&quot; alt=&quot;Does cotton shrink? The six things that change the result — water, heat, agitation, drying, how the tee was made and wash history — with tips before sizing up and for keeping the fit.&quot; width=&quot;1600&quot; height=&quot;2000&quot; loading=&quot;lazy&quot; style=&quot;max-width:100%;height:auto&quot;&gt;&lt;/a&gt;&lt;figcaption&gt;Chart: &lt;a href=&quot;https://tshirtsiwant.com/tools/printable-t-shirt-charts/&quot;&gt;Tshirts I Want&lt;/a&gt;, &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;&gt;CC BY 4.0&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
+  </div>
+</section>
+<section class="card" id="wash-graphic-tees">
+  <a href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/#wash-graphic-tees"><img src="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-how-to-wash-graphic-tees-chart.png" alt="How to wash a graphic tee in four steps — before, wash, dry and after — with the care instructions for our Classic Tees, why prints wear and what to do if a print peels." width="1600" height="2000" loading="lazy"></a>
+  <div>
+    <h2>How to wash a graphic tee</h2>
+    <p>A four-step routine that keeps heat and rubbing away from the print, with the care steps for our Classic Tees.</p>
+    <p class="data"><strong>Data:</strong> Care steps from our Classic Tee product pages.</p>
+    <p><a href="https://tshirtsiwant.com/blog/how-to-wash-graphic-tees/">Read the full guide</a> · <a href="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-how-to-wash-graphic-tees-chart.png">Download PNG</a></p>
+    <label for="e-wash-graphic-tees">Embed this chart</label>
+    <textarea id="e-wash-graphic-tees" rows="4" readonly>&lt;figure&gt;&lt;a href=&quot;https://tshirtsiwant.com/blog/how-to-wash-graphic-tees/&quot;&gt;&lt;img src=&quot;https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-how-to-wash-graphic-tees-chart.png&quot; alt=&quot;How to wash a graphic tee in four steps — before, wash, dry and after — with the care instructions for our Classic Tees, why prints wear and what to do if a print peels.&quot; width=&quot;1600&quot; height=&quot;2000&quot; loading=&quot;lazy&quot; style=&quot;max-width:100%;height:auto&quot;&gt;&lt;/a&gt;&lt;figcaption&gt;Chart: &lt;a href=&quot;https://tshirtsiwant.com/tools/printable-t-shirt-charts/&quot;&gt;Tshirts I Want&lt;/a&gt;, &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;&gt;CC BY 4.0&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
+  </div>
+</section>
+<section class="card" id="cotton-vs-performance">
+  <a href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/#cotton-vs-performance"><img src="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-cotton-vs-performance-shirts-chart.png" alt="Cotton vs. performance shirts compared: everyday design-led wear versus activity and quick drying, with Gildan G5000 and G8000 examples and five things to check before buying." width="1600" height="2000" loading="lazy"></a>
+  <div>
+    <h2>Cotton vs. performance shirts</h2>
+    <p>When to start with cotton and when to compare performance fabrics, with real examples and a five-point check before you buy.</p>
+    <p class="data"><strong>Data:</strong> Fabric facts as cited in our guide: CottonWorks, Patagonia and Gildan (G5000, G8000).</p>
+    <p><a href="https://tshirtsiwant.com/blog/cotton-vs-performance-shirts/">Read the full guide</a> · <a href="https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-cotton-vs-performance-shirts-chart.png">Download PNG</a></p>
+    <label for="e-cotton-vs-performance">Embed this chart</label>
+    <textarea id="e-cotton-vs-performance" rows="4" readonly>&lt;figure&gt;&lt;a href=&quot;https://tshirtsiwant.com/blog/cotton-vs-performance-shirts/&quot;&gt;&lt;img src=&quot;https://media.tshirtsiwant.com/wp-content/uploads/2026/10/tshirtsiwant-cotton-vs-performance-shirts-chart.png&quot; alt=&quot;Cotton vs. performance shirts compared: everyday design-led wear versus activity and quick drying, with Gildan G5000 and G8000 examples and five things to check before buying.&quot; width=&quot;1600&quot; height=&quot;2000&quot; loading=&quot;lazy&quot; style=&quot;max-width:100%;height:auto&quot;&gt;&lt;/a&gt;&lt;figcaption&gt;Chart: &lt;a href=&quot;https://tshirtsiwant.com/tools/printable-t-shirt-charts/&quot;&gt;Tshirts I Want&lt;/a&gt;, &lt;a href=&quot;https://creativecommons.org/licenses/by/4.0/&quot;&gt;CC BY 4.0&lt;/a&gt;&lt;/figcaption&gt;&lt;/figure&gt;</textarea>
+  </div>
+</section>
+</main>
 </body>
 </html>
