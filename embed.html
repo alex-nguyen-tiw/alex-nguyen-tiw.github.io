@@ -1,175 +1,71 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Embeddable US Unisex T-Shirt Size Calculator Widget (S–5XL) | Tshirts I Want</title>
-  <meta name="description" content="Free embeddable US adult unisex T-shirt size calculator widget (S–5XL) by height, weight, or flat pit-to-pit width. Calibrated on ANSUR II & NHANES data." />
-  <link rel="canonical" href="https://tshirtsiwant.com/tools/size-calculator/" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>T-Shirt Size Calculator (S–5XL) | T-Shirts I Want</title>
+  <meta name="description" content="Find your unisex T-shirt, tank top, sweatshirt, or hoodie size (S to 5XL) by height and weight, chest measurement, or flat shirt width on T-Shirts I Want.">
+  <link rel="canonical" href="https://tshirtsiwant.com/tools/size-calculator/">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #f8fafc;
+      margin: 0;
+      padding: 12px;
+      background: transparent;
       color: #0f172a;
-      padding: 14px;
     }
     .widget {
-      max-width: 540px;
+      max-width: 520px;
       margin: 0 auto;
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      border-top: 4px solid #2563eb;
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 18px 20px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+      box-shadow: 0 2px 5px rgba(15,23,42,0.06);
     }
-    .w-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 10px;
-    }
-    .w-head h1 {
-      font-size: 1.08rem;
-      font-weight: 800;
+    .widget h2 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
       color: #0f172a;
     }
-    .w-badge {
-      background: #dbeafe;
-      color: #1e40af;
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 3px 8px;
-      border-radius: 999px;
-    }
-    .w-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      margin-bottom: 12px;
-    }
-    label {
-      display: block;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: #334155;
-      margin-bottom: 4px;
-    }
-    input, select {
-      width: 100%;
-      padding: 8px 10px;
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      font-size: 0.9rem;
-    }
-    button {
-      width: 100%;
-      background: #2563eb;
-      color: #ffffff;
-      font-weight: 700;
-      border: none;
-      padding: 10px 14px;
-      border-radius: 8px;
-      cursor: pointer;
+    .widget p {
+      margin: 0 0 14px;
       font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.5;
     }
-    button:hover { background: #1d4ed8; }
-    .w-res {
-      margin-top: 12px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      border-radius: 8px;
-      padding: 10px 12px;
-      font-size: 0.88rem;
-      line-height: 1.45;
-      display: none;
+    a.btn {
+      display: inline-block;
+      background: #1d4ed8;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      padding: 9px 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
-    .w-foot {
+    .links {
       margin-top: 12px;
       padding-top: 10px;
       border-top: 1px solid #e2e8f0;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 0.76rem;
-      color: #475569;
+      font-size: 0.8rem;
+      color: #64748b;
     }
-    .w-foot a {
+    .links a {
       color: #1d4ed8;
-      font-weight: 700;
-      text-decoration: none;
+      text-decoration: underline;
     }
-    .w-foot a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
   <div class="widget">
-    <div class="w-head">
-      <h1>US Unisex T-Shirt Size Calculator (S–5XL)</h1>
-      <span class="w-badge">Gildan 5000 / BC 3001</span>
-    </div>
-    <div class="w-grid">
-      <div>
-        <label for="heightIn">Height (inches, e.g. 70 = 5'10")</label>
-        <input type="number" id="heightIn" value="70" min="54" max="84" />
-      </div>
-      <div>
-        <label for="weightLb">Weight (lbs)</label>
-        <input type="number" id="weightLb" value="175" min="85" max="420" />
-      </div>
-      <div>
-        <label for="fitPref">Fit Preference</label>
-        <select id="fitPref">
-          <option value="0">Regular Standard Fit</option>
-          <option value="-2">Snug / Athletic Fit</option>
-          <option value="3.5">Relaxed / Oversized (+1)</option>
-        </select>
-      </div>
-      <div>
-        <label for="fabricType">Fabric Shrinkage Buffer</label>
-        <select id="fabricType">
-          <option value="0">Cold Wash / Pre-Shrunk</option>
-          <option value="1.2">100% Cotton + High Dryer Heat</option>
-        </select>
-      </div>
-    </div>
-    <button type="button" onclick="calcWidgetSize()">Calculate Recommended Unisex Size</button>
-    <div id="wResult" class="w-res"></div>
-    <div class="w-foot">
-      <span>Powered by <a href="https://tshirtsiwant.com/tools/size-calculator/" target="_blank" rel="dofollow">Tshirts I Want Size Calculator</a></span>
-      <span><a href="https://tshirtsiwant.com/blog/unisex-t-shirt-size-chart/" target="_blank" rel="dofollow">Full S–5XL Chart</a> · <a href="https://tshirtsiwant.com/blog/does-cotton-shrink/" target="_blank" rel="dofollow">Shrinkage Guide</a></span>
+    <h2>Interactive T-Shirt Size Calculator (S–5XL)</h2>
+    <p>Compare unisex tees, women's tees, tank tops, sweatshirts, and hoodies by height and weight, chest measurement, or a flat shirt measurement.</p>
+    <a class="btn" href="https://tshirtsiwant.com/tools/size-calculator/" target="_top" rel="noopener">Open T-Shirt Size Calculator &rarr;</a>
+    <div class="links">
+      Also available: <a href="https://tshirtsiwant.com/tools/printable-t-shirt-charts/" target="_top" rel="noopener">Printable Size and Care Charts (PDF &amp; PNG)</a>
     </div>
   </div>
-  <script>
-    function calcWidgetSize() {
-      var h = parseFloat(document.getElementById('heightIn').value) || 70;
-      var w = parseFloat(document.getElementById('weightLb').value) || 175;
-      var ease = parseFloat(document.getElementById('fitPref').value) || 0;
-      var shrink = parseFloat(document.getElementById('fabricType').value) || 0;
-      var estChest = 23.8 + (0.095 * w) + (0.04 * h) + ease + shrink;
-      var chart = [
-        {size: 'S', flat: 18, chest: 36, len: 28, maxBody: 36.2},
-        {size: 'M', flat: 20, chest: 40, len: 29, maxBody: 39.8},
-        {size: 'L', flat: 22, chest: 44, len: 30, maxBody: 43.8},
-        {size: 'XL', flat: 24, chest: 48, len: 31, maxBody: 47.8},
-        {size: '2XL', flat: 26, chest: 52, len: 32, maxBody: 51.8},
-        {size: '3XL', flat: 28, chest: 56, len: 33, maxBody: 55.8},
-        {size: '4XL', flat: 30, chest: 60, len: 34, maxBody: 59.8},
-        {size: '5XL', flat: 32, chest: 64, len: 35, maxBody: 999}
-      ];
-      var pick = chart[chart.length - 1];
-      for (var i = 0; i < chart.length; i++) {
-        if (estChest <= chart[i].maxBody) { pick = chart[i]; break; }
-      }
-      var el = document.getElementById('wResult');
-      el.style.display = 'block';
-      el.innerHTML = '<strong>Recommended Unisex Size: <span style="color:#1d4ed8;font-size:1.08rem;">' + pick.size + '</span></strong> ' +
-        '(Flat Pit-to-Pit: <strong>' + pick.flat + '&Prime;</strong> · Garment Chest: <strong>' + pick.chest + '&Prime;</strong> · Length: <strong>' + pick.len + '&Prime;</strong>). ' +
-        'Compare Hoodie, Tank Top &amp; Women&rsquo;s cuts on the <a href="https://tshirtsiwant.com/tools/size-calculator/" target="_blank" rel="dofollow" style="color:#1d4ed8;font-weight:700;">Full Interactive Calculator &rarr;</a>';
-    }
-    calcWidgetSize();
-  </script>
 </body>
 </html>
